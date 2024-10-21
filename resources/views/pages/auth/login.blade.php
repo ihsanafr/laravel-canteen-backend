@@ -61,7 +61,6 @@
                                 </div>
                                 @enderror
                             </div>
-
                             <div class="form-group">
                                 <div class="d-block">
                                     <label for="password"
