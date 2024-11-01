@@ -22,7 +22,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Create User</h1>
+                <h1>Create Products</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Forms</a></div>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="section-body">
-                <h2 class="section-title">User Create</h2>
+                <h2 class="section-title">Create Products</h2>
                 <p class="section-lead">We provide advanced input fields, such as date picker, color picker, and so on.</p>
 
                 <div class="row">
@@ -40,7 +40,7 @@
                             <div class="card-header">
                                 <h4>Input Text</h4>
                             </div>
-                            <form action="{{route('user.store')}}" method="POST">
+                            <form action="{{route('product.store')}}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
@@ -49,66 +49,40 @@
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" name="email"
+                                        <label>Price</label>
+                                        <input type="number" name="price"
                                             class="form-control">
                                     </div>
-                                    
                                     <div class="form-group">
-                                        <label>Phone Number</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-phone"></i>
-                                                </div>
-                                            </div>
-                                            <input type="text" name="phone"
-                                                class="form-control phone-number">
-                                        </div>
+                                        <label>Stock</label>
+                                        <input type="number" name="stock"
+                                            class="form-control">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-lock"></i>
-                                                </div>
-                                            </div>
-                                            <input type="password" name="password"
-                                                class="form-control pwstrength"
-                                                data-indicator="pwindicator">
-                                        </div>
-                                        <div id="pwindicator"
-                                            class="pwindicator">
-                                            <div class="bar"></div>
-                                            <div class="label"></div>
-                                        </div>
-                                    </div>
-                                    <div class="section-title">Role</div>
+                                    <div class="section-title">Category</div>
                                     <div class="form-group">
                                         <label class="form-label"></label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio"
-                                                    name="role"
-                                                    value="user"
+                                                    name="category"
+                                                    value="food"
                                                     class="selectgroup-input"
                                                     checked="">
-                                                <span class="selectgroup-button">User</span>
+                                                <span class="selectgroup-button">Food</span>
                                             </label>
                                             <label class="selectgroup-item">
                                                 <input type="radio"
-                                                    name="role"
-                                                    value="staff"
+                                                    name="category"
+                                                    value="snack"
                                                     class="selectgroup-input">
-                                                <span class="selectgroup-button">Staff</span>
+                                                <span class="selectgroup-button">Snack</span>
                                             </label>
                                             <label class="selectgroup-item">
                                                 <input type="radio"
-                                                    name="role"
-                                                    value="admin"
+                                                    name="category"
+                                                    value="drink"
                                                     class="selectgroup-input">
-                                                <span class="selectgroup-button">Admin</span>
+                                                <span class="selectgroup-button">Drink</span>
                                             </label>
                                         </div>
                                     </div>

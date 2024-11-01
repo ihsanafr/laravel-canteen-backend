@@ -22,7 +22,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Create User</h1>
+                <h1>Advanced Forms</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Forms</a></div>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="section-body">
-                <h2 class="section-title">User Create</h2>
+                <h2 class="section-title">Advanced Forms</h2>
                 <p class="section-lead">We provide advanced input fields, such as date picker, color picker, and so on.</p>
 
                 <div class="row">
@@ -40,75 +40,59 @@
                             <div class="card-header">
                                 <h4>Input Text</h4>
                             </div>
-                            <form action="{{route('user.store')}}" method="POST">
+                            <form action="{{route('product.update', $product->id)}}" method="POST">
+                                @method('PUT')
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" name="name"
+                                        <input type="text" name="name" value="{{$product->name}}"
                                             class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" name="email"
+                                        <label>Price</label>
+                                        <input type="number" name="price" value="{{$product->price}}"
                                             class="form-control">
                                     </div>
-                                    
                                     <div class="form-group">
-                                        <label>Phone Number</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-phone"></i>
-                                                </div>
-                                            </div>
-                                            <input type="text" name="phone"
-                                                class="form-control phone-number">
-                                        </div>
+                                        <label>stock</label>
+                                        <input type="number" name="stock" value="{{$product->stock}}"
+                                            class="form-control">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-lock"></i>
-                                                </div>
-                                            </div>
-                                            <input type="password" name="password"
-                                                class="form-control pwstrength"
-                                                data-indicator="pwindicator">
-                                        </div>
-                                        <div id="pwindicator"
-                                            class="pwindicator">
-                                            <div class="bar"></div>
-                                            <div class="label"></div>
-                                        </div>
-                                    </div>
-                                    <div class="section-title">Role</div>
+                                    <div class="section-title">Categories</div>
                                     <div class="form-group">
                                         <label class="form-label"></label>
                                         <div class="selectgroup w-100">
                                             <label class="selectgroup-item">
                                                 <input type="radio"
-                                                    name="role"
-                                                    value="user"
+                                                    name="category"
+                                                    value="food"
                                                     class="selectgroup-input"
-                                                    checked="">
-                                                <span class="selectgroup-button">User</span>
+                                                    @if ($product->category == 'food') checked
+                                                        
+                                                    @endif>
+                                                <span class="selectgroup-button">food</span>
                                             </label>
                                             <label class="selectgroup-item">
                                                 <input type="radio"
-                                                    name="role"
-                                                    value="staff"
-                                                    class="selectgroup-input">
-                                                <span class="selectgroup-button">Staff</span>
+                                                    name="category"
+                                                    value="snack"
+                                                    class="selectgroup-input"
+                                                    @if ($product->category == 'snack') checked                                                       
+                                                    @endif
+                                                    >
+                                                <span class="selectgroup-button">snack</span>
                                             </label>
                                             <label class="selectgroup-item">
                                                 <input type="radio"
-                                                    name="role"
-                                                    value="admin"
-                                                    class="selectgroup-input">
-                                                <span class="selectgroup-button">Admin</span>
+                                                    name="category"
+                                                    value="drink"
+                                                    class="selectgroup-input"
+                                                    @if ($product->category == 'drink') checked
+                                                        
+                                                    @endif>
+                                                    
+                                                <span class="selectgroup-button">drink</span>
                                             </label>
                                         </div>
                                     </div>
@@ -120,7 +104,6 @@
                             </form>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section>

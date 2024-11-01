@@ -32,5 +32,15 @@
                     </li>
                 </ul>
             </li>
+            <li class="">
+                <a href="#"
+                    class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Product</span></a>
+                <ul class="dropdown-menu">
+                    <li class='{{ Request::is('dashboard-general-dashboard') ? 'active' : '' }}'>
+                        <a class="nav-link"
+                            href="{{route('product.index')}}">Product</a>
+                    </li>
+                </ul>
+            </li>
     </aside>
 </div>
